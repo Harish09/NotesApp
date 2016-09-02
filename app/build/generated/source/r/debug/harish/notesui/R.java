@@ -15,8 +15,9 @@ public final class R {
         public static final int feed_item_bg=0x7f060001;
         public static final int feed_item_border=0x7f060002;
         public static final int link=0x7f060003;
-        public static final int timestamp=0x7f060004;
-        public static final int white=0x7f060005;
+        public static final int tag=0x7f060004;
+        public static final int timestamp=0x7f060005;
+        public static final int white=0x7f060006;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f040000;
@@ -38,13 +39,14 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090008;
-        public static final int editText=0x7f090000;
-        public static final int feedImage1=0x7f090007;
+        public static final int action_settings=0x7f090009;
+        public static final int feedImage1=0x7f090008;
         public static final int list=0x7f090001;
         public static final int name=0x7f090003;
         public static final int profilePic=0x7f090002;
+        public static final int searchView=0x7f090000;
         public static final int timestamp=0x7f090004;
+        public static final int txtHashtag=0x7f090007;
         public static final int txtStatusMsg=0x7f090005;
         public static final int txtUrl=0x7f090006;
     }

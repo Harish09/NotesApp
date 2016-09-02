@@ -4,6 +4,7 @@
     <color name="feed_item_bg">#ffffff</color>
     <color name="feed_item_border">#c2c3c8</color>
     <color name="link">#0a80d9</color>
+    <color name="tag">#037abe</color>
     <color name="timestamp">#a0a3a7</color>
     <color name="white">#ffffff</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>

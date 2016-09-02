@@ -22,7 +22,7 @@ import harish.notesui.data.FeedItem;
 import harish.notesui.FeedImageView;
 import harish.notesui.R;
 
-public class FeedListAdapter extends BaseAdapter {	
+public class FeedListAdapter extends BaseAdapter {
 	private Activity activity;
 	private LayoutInflater inflater;
 	private List<FeedItem> feedItems;
@@ -52,8 +52,8 @@ public class FeedListAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 
 		if (inflater == null)
-			inflater = (LayoutInflater) activity
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
 		if (convertView == null)
 			convertView = inflater.inflate(R.layout.feed_item, null);
 
@@ -61,15 +61,18 @@ public class FeedListAdapter extends BaseAdapter {
 			imageLoader = AppController.getInstance().getImageLoader();
 
 		TextView name = (TextView) convertView.findViewById(R.id.name);
-		TextView timestamp = (TextView) convertView
-				.findViewById(R.id.timestamp);
-		TextView statusMsg = (TextView) convertView
-				.findViewById(R.id.txtStatusMsg);
+
+		TextView timestamp = (TextView) convertView.findViewById(R.id.timestamp);
+
+		TextView hashtag = (TextView) convertView.findViewById(R.id.txtHashtag);
+
+		TextView statusMsg = (TextView) convertView.findViewById(R.id.txtStatusMsg);
+
 		TextView url = (TextView) convertView.findViewById(R.id.txtUrl);
-		NetworkImageView profilePic = (NetworkImageView) convertView
-				.findViewById(R.id.profilePic);
-		FeedImageView feedImageView = (FeedImageView) convertView
-				.findViewById(R.id.feedImage1);
+
+		NetworkImageView profilePic = (NetworkImageView) convertView.findViewById(R.id.profilePic);
+
+		FeedImageView feedImageView = (FeedImageView) convertView.findViewById(R.id.feedImage1);
 
 		FeedItem item = feedItems.get(position);
 
@@ -95,31 +98,32 @@ public class FeedListAdapter extends BaseAdapter {
 			url.setText(Html.fromHtml("<a href=\"" + item.getUrl() + "\">"
 					+ item.getUrl() + "</a> "));
 
-			// Making url clickable
 			url.setMovementMethod(LinkMovementMethod.getInstance());
 			url.setVisibility(View.VISIBLE);
 		} else {
-			// url is null, remove from the view
 			url.setVisibility(View.GONE);
 		}
 
-		// user profile pic
+		if (item.getHashtag() != null) {
+			hashtag.setText(Html.fromHtml(String.format("<b>#%s</b>", item.getHashtag())));
+			hashtag.setVisibility(View.VISIBLE);
+		} else
+			hashtag.setVisibility(View.GONE);
+
 		profilePic.setImageUrl(item.getProfilePic(), imageLoader);
 
-		// Feed image
-		if (item.getImge() != null) {
-			feedImageView.setImageUrl(item.getImge(), imageLoader);
+		if (item.getImage() != null) {
+			feedImageView.setImageUrl(item.getImage(), imageLoader);
 			feedImageView.setVisibility(View.VISIBLE);
-			feedImageView
-					.setResponseObserver(new FeedImageView.ResponseObserver() {
-						@Override
-						public void onError() {
-						}
+			feedImageView.setResponseObserver(new FeedImageView.ResponseObserver() {
+				@Override
+				public void onError() {
+				}
 
-						@Override
-						public void onSuccess() {
-						}
-					});
+				@Override
+				public void onSuccess() {
+				}
+			});
 		} else {
 			feedImageView.setVisibility(View.GONE);
 		}
