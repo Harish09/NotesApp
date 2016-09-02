@@ -149,7 +149,7 @@ public class MainActivity extends Activity {
 
 				String tag = feedObj.isNull("hashtag") ? null : feedObj.getString("hashtag");
 				item.setHashtag(tag);
-
+   
 				if (tag != null) hashtagTrie.insertWord(tag);
 
 				feedItems.add(item);
