@@ -2,5 +2,13 @@
     {
         "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
         "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/u2.png",
+        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/drawable-xhdpi/u2.png"
+    },
+    {
+        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/uploadbutton.png",
+        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/drawable-xhdpi/uploadbutton.png"
     }
 ]

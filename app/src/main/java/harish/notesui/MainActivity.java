@@ -1,6 +1,7 @@
 package harish.notesui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -30,6 +32,7 @@ import java.util.List;
 import harish.notesui.adapter.FeedListAdapter;
 import harish.notesui.app.AppController;
 import harish.notesui.data.FeedItem;
+
 
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getSimpleName();
@@ -149,7 +152,7 @@ public class MainActivity extends Activity {
 
 				String tag = feedObj.isNull("hashtag") ? null : feedObj.getString("hashtag");
 				item.setHashtag(tag);
-   
+
 				if (tag != null) hashtagTrie.insertWord(tag);
 
 				feedItems.add(item);
@@ -167,4 +170,11 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	public void upload(View view) {
+
+		Intent intent =new Intent(this,uploadhandler.class);
+		startActivity(intent);
+
+
+	}
 }
