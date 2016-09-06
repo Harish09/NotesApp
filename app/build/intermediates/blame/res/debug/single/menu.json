@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/menu/main.xml"
+        "merged": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\menu\\main.xml"
     }
 ]

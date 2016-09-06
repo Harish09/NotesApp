@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/values/values.xml",
+        "outputFile": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 92
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -23,7 +23,7 @@
                     "endOffset": 139
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -35,7 +35,7 @@
                     "endOffset": 190
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -47,7 +47,7 @@
                     "endOffset": 229
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -59,7 +59,7 @@
                     "endOffset": 267
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml",
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -78,7 +78,7 @@
                     "endOffset": 311
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -90,7 +90,7 @@
                     "endOffset": 351
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/colors.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -102,7 +102,7 @@
                     "endOffset": 409
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -114,7 +114,7 @@
                     "endOffset": 465
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -126,7 +126,7 @@
                     "endOffset": 518
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -138,7 +138,7 @@
                     "endOffset": 572
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -150,7 +150,7 @@
                     "endOffset": 620
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -162,7 +162,7 @@
                     "endOffset": 680
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -174,7 +174,7 @@
                     "endOffset": 740
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -186,7 +186,7 @@
                     "endOffset": 799
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -198,7 +198,7 @@
                     "endOffset": 853
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -210,7 +210,7 @@
                     "endOffset": 906
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -222,7 +222,7 @@
                     "endOffset": 969
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -234,7 +234,7 @@
                     "endOffset": 1025
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -246,7 +246,7 @@
                     "endOffset": 1076
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/dimens.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -258,7 +258,7 @@
                     "endOffset": 1129
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/strings.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
@@ -270,7 +270,7 @@
                     "endOffset": 1173
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/strings.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
@@ -282,7 +282,7 @@
                     "endOffset": 1226
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/strings.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
@@ -295,7 +295,7 @@
                     "endOffset": 1517
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/styles.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\styles.xml"
                 }
             },
             {
@@ -308,7 +308,491 @@
                     "endOffset": 1677
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values/styles.xml"
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 41,
+                    "endOffset": 92
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 98,
+                        "endColumn": 41,
+                        "endOffset": 135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 97,
+                    "endColumn": 46,
+                    "endOffset": 139
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 141,
+                        "endColumn": 46,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 144,
+                    "endColumn": 50,
+                    "endOffset": 190
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 189,
+                        "endColumn": 50,
+                        "endOffset": 235
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 195,
+                    "endColumn": 38,
+                    "endOffset": 229
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 241,
+                        "endColumn": 38,
+                        "endOffset": 275
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 234,
+                    "endColumn": 37,
+                    "endOffset": 267
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 281,
+                        "endColumn": 37,
+                        "endOffset": 314
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 272,
+                    "endColumn": 43,
+                    "endOffset": 311
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 320,
+                        "endColumn": 43,
+                        "endOffset": 359
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 316,
+                    "endColumn": 39,
+                    "endOffset": 351
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 39,
+                        "endOffset": 92
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 356,
+                    "endColumn": 57,
+                    "endOffset": 409
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 132,
+                        "endColumn": 57,
+                        "endOffset": 185
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 414,
+                    "endColumn": 55,
+                    "endOffset": 465
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 191,
+                        "endColumn": 55,
+                        "endOffset": 242
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 470,
+                    "endColumn": 52,
+                    "endOffset": 518
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 828,
+                        "endColumn": 52,
+                        "endOffset": 876
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 523,
+                    "endColumn": 53,
+                    "endOffset": 572
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 773,
+                        "endColumn": 53,
+                        "endOffset": 822
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 577,
+                    "endColumn": 47,
+                    "endOffset": 620
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 260,
+                        "endColumn": 47,
+                        "endOffset": 303
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 625,
+                    "endColumn": 59,
+                    "endOffset": 680
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 370,
+                        "endColumn": 59,
+                        "endOffset": 425
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 685,
+                    "endColumn": 59,
+                    "endOffset": 740
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 309,
+                        "endColumn": 59,
+                        "endOffset": 364
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 745,
+                    "endColumn": 58,
+                    "endOffset": 799
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 485,
+                        "endColumn": 58,
+                        "endOffset": 539
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 804,
+                    "endColumn": 53,
+                    "endOffset": 853
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 545,
+                        "endColumn": 53,
+                        "endOffset": 594
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 858,
+                    "endColumn": 52,
+                    "endOffset": 906
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 431,
+                        "endColumn": 52,
+                        "endOffset": 479
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 911,
+                    "endColumn": 62,
+                    "endOffset": 969
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 652,
+                        "endColumn": 62,
+                        "endOffset": 710
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 974,
+                    "endColumn": 55,
+                    "endOffset": 1025
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 716,
+                        "endColumn": 55,
+                        "endOffset": 767
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1030,
+                    "endColumn": 50,
+                    "endOffset": 1076
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 600,
+                        "endColumn": 50,
+                        "endOffset": 646
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1081,
+                    "endColumn": 52,
+                    "endOffset": 1129
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 52,
+                        "endOffset": 152
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1134,
+                    "endColumn": 43,
+                    "endOffset": 1173
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 59,
+                        "endColumn": 43,
+                        "endOffset": 98
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1178,
+                    "endColumn": 52,
+                    "endOffset": 1226
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endColumn": 52,
+                        "endOffset": 206
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1231,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1517
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 191,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 481
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1522,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1677
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 522,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 679
+                    }
                 }
             }
         ]

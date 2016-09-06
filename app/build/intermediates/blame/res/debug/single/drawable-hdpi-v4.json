@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
-        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/drawable-hdpi/ic_launcher.png"
+        "merged": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     }
 ]
