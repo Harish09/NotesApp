@@ -1,14 +1,26 @@
 [
     {
-        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/layout/feed_item.xml",
-        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/layout/feed_item.xml"
+        "merged": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uploaddetails.xml",
+        "source": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\layout\\uploaddetails.xml"
     },
     {
-        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/layout/activity_main.xml"
+        "merged": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\feed_item.xml",
+        "source": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\layout\\feed_item.xml"
     },
     {
-        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/layout/uploaddetails.xml",
-        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/layout/uploaddetails.xml"
+        "merged": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uploaddetails.xml",
+        "source": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\layout\\uploaddetails.xml"
+    },
+    {
+        "merged": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\layout\\feed_item.xml",
+        "source": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\layout\\feed_item.xml"
     }
 ]

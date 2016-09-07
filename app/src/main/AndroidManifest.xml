@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".uploadhandler"
+        <activity android:name=".UploadHandler"
             android:parentActivityName=".MainActivity"/>
     </application>
 

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/values-v14/values-v14.xml",
+        "outputFile": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\values-v14\\values-v14.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,33 @@
                     "endOffset": 201
                 },
                 "from": {
-                    "file": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/values-v14/styles.xml",
+                    "file": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 225,
+                        "endLine": 9,
+                        "endColumn": 12,
+                        "endOffset": 373
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\values-v14\\values-v14.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 201
+                },
+                "from": {
+                    "file": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\values-v14\\styles.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

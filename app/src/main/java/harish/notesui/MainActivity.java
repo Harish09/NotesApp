@@ -2,6 +2,7 @@ package harish.notesui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -25,7 +26,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,21 +36,20 @@ import harish.notesui.data.FeedItem;
 
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getSimpleName();
-	private ListView listView;
 	private Trie hashtagTrie;
-	private EditText sV;
 
 	private FeedListAdapter listAdapter;
 	private List<FeedItem> feedItems;
-	private static String URL_FEED = "https://api.myjson.com/bins/1wlg8";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		listView = (ListView) findViewById(R.id.list);
-		sV = (EditText) findViewById(R.id.searchView);
+		String URL_FEED = Resources.getSystem ().getString (R.string.url_feed);
+
+		ListView listView = (ListView) findViewById (R.id.list);
+		EditText sV = (EditText) findViewById (R.id.searchView);
 
 		feedItems = new ArrayList<>();
 		hashtagTrie = new Trie('\0', false);
@@ -65,35 +64,27 @@ public class MainActivity extends Activity {
 		if (entry != null) {
 			try {
 				String data = new String(entry.data, "UTF-8");
-				try {
-					parseJsonFeed(new JSONObject(data));
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-			} catch (UnsupportedEncodingException e) {
+				parseJsonFeed(new JSONObject(data));
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		} else {
-			JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET,
-					URL_FEED, null, new Response.Listener<JSONObject>() {
+			JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET, URL_FEED, null, new Response.Listener<JSONObject>() {
+				@Override
+				public void onResponse(JSONObject response) {
+					VolleyLog.d(TAG, "Response: " + response.toString());
+					parseJsonFeed(response);
+				}
+			}, new Response.ErrorListener() {
 
-						@Override
-						public void onResponse(JSONObject response) {
-							VolleyLog.d(TAG, "Response: " + response.toString());
-							parseJsonFeed(response);
-						}
-					}, new Response.ErrorListener() {
-
-						@Override
-						public void onErrorResponse(VolleyError error) {
-							VolleyLog.d(TAG, "Error: " + error.getMessage());
-						}
-					});
+				@Override
+				public void onErrorResponse(VolleyError error) {
+					VolleyLog.d(TAG, "Error: " + error.getMessage());
+				}
+			});
 
 			AppController.getInstance().addToRequestQueue(jsonReq);
 		}
-
 
 		sV.addTextChangedListener(new TextWatcher() {
 			@Override
@@ -111,11 +102,10 @@ public class MainActivity extends Activity {
 
 				List<FeedItem> list = new ArrayList<>();
 
-				for (FeedItem f : feedItems) {
-					if (suggestions.contains(f.getHashtag())) {
-						list.add(f);
-					}
-				}
+				for (FeedItem feedItem : feedItems)
+					if (suggestions.contains(feedItem.getHashtag()))
+						list.add(feedItem);
+
 				feedItems.clear();
 				feedItems.addAll(list);
 
@@ -135,24 +125,9 @@ public class MainActivity extends Activity {
 
 			for (int i = 0; i < feedArray.length(); i++) {
 				JSONObject feedObj = (JSONObject) feedArray.get(i);
+				FeedItem item = FeedItem.fromJSON (feedObj);
 
-				FeedItem item = new FeedItem();
-				item.setId(feedObj.getInt("id"));
-				item.setName(feedObj.getString("name"));
-
-				String image = feedObj.isNull("image") ? null : feedObj
-						.getString("image");
-				item.setImage(image);
-				item.setStatus(feedObj.getString("status"));
-				item.setProfilePic(feedObj.getString("profilePic"));
-				item.setTimeStamp(feedObj.getString("timeStamp"));
-
-				String feedUrl = feedObj.isNull("url") ? null : feedObj.getString("url");
-				item.setUrl(feedUrl);
-
-				String tag = feedObj.isNull("hashtag") ? null : feedObj.getString("hashtag");
-				item.setHashtag(tag);
-
+				String tag = item.getHashtag ();
 				if (tag != null) hashtagTrie.insertWord(tag);
 
 				feedItems.add(item);
@@ -171,10 +146,21 @@ public class MainActivity extends Activity {
 	}
 
 	public void upload(View view) {
+		Intent uploadIntent = new Intent(MainActivity.this, UploadHandler.class);
+		uploadIntent.putExtra ("feed_length", feedItems.size ());
 
-		Intent intent =new Intent(this,uploadhandler.class);
-		startActivity(intent);
+		ArrayList<String> list = new ArrayList<> ();
 
+		for (FeedItem f : feedItems) {
+			try {
+				list.add (f.toJSON ().toString ());
+			} catch (JSONException e) {
+				e.printStackTrace ();
+			}
+		}
 
+		uploadIntent.putStringArrayListExtra ("feed", list);
+
+		startActivity(uploadIntent);
 	}
 }
