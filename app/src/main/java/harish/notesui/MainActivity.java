@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		String URL_FEED = Resources.getSystem ().getString (R.string.url_feed);
+		String URL_FEED = getString (R.string.url_feed);
 
 		ListView listView = (ListView) findViewById (R.id.list);
 		EditText sV = (EditText) findViewById (R.id.searchView);
@@ -147,7 +147,6 @@ public class MainActivity extends Activity {
 
 	public void upload(View view) {
 		Intent uploadIntent = new Intent(MainActivity.this, UploadHandler.class);
-		uploadIntent.putExtra ("feed_length", feedItems.size ());
 
 		ArrayList<String> list = new ArrayList<> ();
 

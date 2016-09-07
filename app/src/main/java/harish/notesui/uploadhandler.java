@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import harish.notesui.app.AppController;
 import harish.notesui.data.FeedItem;
@@ -35,7 +37,7 @@ public class UploadHandler extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
 
-	    URL_FEED = Resources.getSystem ().getString (R.string.url_feed);
+	    URL_FEED = getString(R.string.url_feed);
 
 	    name = (EditText) findViewById(R.id.name);
 	    status = (EditText) findViewById(R.id.status);
@@ -51,7 +53,7 @@ public class UploadHandler extends Activity {
 		String url = drivelink.getText ().toString ();
 		String tag = hashtag.getText ().toString ();
 
-	    final FeedItem item = new FeedItem (4, username, null, statusMsg, null, new Date ().toString (), url, tag );
+	    final FeedItem item = new FeedItem (4, username, null, statusMsg, null, String.format(Locale.ENGLISH, "%d", new Date ().getTime()), url, tag );
 
 	    if ( username.length () == 0 || statusMsg.length () == 0 || url.length () == 0 || tag.length () == 0 ) {
 		    alertMessage ("Invalid form");
@@ -68,7 +70,8 @@ public class UploadHandler extends Activity {
 			    @Override
 			    public void onErrorResponse (VolleyError volleyError) {
 				    alertMessage ("ERROR!");
-				    startActivity (new Intent (UploadHandler.this, MainActivity.class));
+					Log.e("NOTES", volleyError.getMessage());
+					startActivity(new Intent(UploadHandler.this, MainActivity.class));
 				    finish ();
 			    }
 		    }) {

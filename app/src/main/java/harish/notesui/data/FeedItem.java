@@ -31,7 +31,8 @@ public class FeedItem implements Serializable {
 
 		item.setStatus(feedObj.getString("status"));
 
-		item.setProfilePic(feedObj.getString("profilePic"));
+		String profilePic = feedObj.isNull("profilePic") ? "http://delfoo.com/image/profile_image/blank_user.png" : feedObj.getString("profilePic");
+		item.setProfilePic(profilePic);
 
 		item.setTimeStamp(feedObj.getString("timeStamp"));
 

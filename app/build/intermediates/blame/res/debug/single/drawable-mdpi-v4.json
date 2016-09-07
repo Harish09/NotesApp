@@ -1,10 +1,14 @@
 [
     {
-        "merged": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
+        "source": "/Users/Harish/Documents/Facebook Like FeedView1/app/src/main/res/drawable-mdpi/ic_launcher.png"
     },
     {
-        "merged": "D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/Harish/Documents/Facebook Like FeedView1/D:\\Users\\Harish\\Documents\\Facebook Like FeedView1\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Harish/Documents/Facebook Like FeedView1/D:\\Workspace\\Android\\sdl-lab\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/Harish/Documents/Facebook Like FeedView1/D:\\Workspace\\Android\\sdl-lab\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]
