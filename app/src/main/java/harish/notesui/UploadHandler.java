@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -24,11 +23,13 @@ import java.util.Locale;
 
 import harish.notesui.app.AppController;
 import harish.notesui.data.FeedItem;
+import harish.notesui.utils.SnackAlert;
 
 public class UploadHandler extends Activity {
 
     EditText status, drivelink, hashtag;
     TextView hashtags;
+    View v;
     ArrayList<String> feedItems;
 
     String URL_FEED;
@@ -37,6 +38,8 @@ public class UploadHandler extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
+
+        v = findViewById(R.id.activity_upload);
 
         URL_FEED = getString(R.string.url_feed);
 
@@ -50,24 +53,24 @@ public class UploadHandler extends Activity {
     }
 
     public void submit(View view) {
-        String username = "llkl";
+        String username = getSharedPreferences("Register", MODE_PRIVATE).getString("user", "Anonymous");
         String statusMsg = status.getText ().toString ();
         String url = drivelink.getText ().toString ();
         List<String> tag = Arrays.asList(hashtags.getText ().toString ().split("|"));
 
         if (statusMsg.length () == 0 || url.length () == 0 || tag.size () == 0)
-            alertMessage ("Invalid form");
+            SnackAlert.showAlert(v, "Invalid Form");
         else {
             StringRequest stringRequest = new StringRequest (
                     Request.Method.PUT,
                     URL_FEED,
                     response -> {
-                        alertMessage ("SUCCESS!");
+                        SnackAlert.showAlert(v, "Success!");
                         startActivity (new Intent (UploadHandler.this, MainActivity.class));
                         finish ();
                     },
                     volleyError -> {
-                        alertMessage ("ERROR!");
+                        SnackAlert.showAlert(v, "Error!");
                         Log.e("NOTES", volleyError.getMessage());
                         startActivity(new Intent(UploadHandler.this, MainActivity.class));
                         finish ();
@@ -92,8 +95,8 @@ public class UploadHandler extends Activity {
                                 url,
                                 tag
                         );
-                        jsonArray = jsonArray.put(0, item.toJSON ());
 
+                        jsonArray = jsonArray.put(0, item.toJSON ());
                         for (int i = 0, feedItemsSize = feedItems.size (); i < feedItemsSize; i++)
                             jsonArray =  jsonArray.put (i + 1, new JSONObject (feedItems.get (i)));
 
@@ -113,15 +116,11 @@ public class UploadHandler extends Activity {
         String tag = hashtag.getText().toString();
 
         if (tag.isEmpty())
-            alertMessage("Can't add empty tag");
+            SnackAlert.showAlert(v, "Tag is empty");
         else {
             String tags = hashtags.getText().toString();
             tags += tag + "|";
             hashtags.setText(tags);
         }
-    }
-
-    public void alertMessage(String message) {
-        Toast.makeText (getApplicationContext (), message, Toast.LENGTH_SHORT).show ();
     }
 }

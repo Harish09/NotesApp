@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedItem implements Serializable {
+public class FeedItem implements Serializable, JSONable {
     private int id;
     private String name, status, image, profilePic, timeStamp, url;
     private List<String> hashtag;
@@ -16,7 +16,7 @@ public class FeedItem implements Serializable {
     public FeedItem() {
     }
 
-    public static FeedItem fromJSON(JSONObject feedObj) throws JSONException {
+    public Object fromJSON(JSONObject feedObj) throws JSONException {
 
         FeedItem item = new FeedItem ();
 

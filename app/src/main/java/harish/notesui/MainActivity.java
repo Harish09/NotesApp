@@ -98,8 +98,7 @@ public class MainActivity extends Activity {
 		Entry entry = cache.get(URL_FEED);
 		if (entry != null)
 			try {
-				String data = new String(entry.data, "UTF-8");
-				parseJsonFeed(new JSONObject(data));
+				parseJsonFeed(new JSONObject(new String(entry.data, "UTF-8")));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -112,27 +111,21 @@ public class MainActivity extends Activity {
 		return new JsonObjectRequest(Method.GET,
 				URL_FEED,
 				null,
-				response -> {
-					VolleyLog.d(TAG, "Response: " + response.toString());
-					parseJsonFeed(response);
-				},
+                this::parseJsonFeed,
 				error -> VolleyLog.d(TAG, "Error: " + error.getMessage())
 		);
 	}
 
 	private void parseJsonFeed(@NonNull JSONObject response) {
+		FeedItem dummy = new FeedItem();
 		try {
 			JSONArray feedArray = response.getJSONArray("feed");
 
 			for (int i = 0; i < feedArray.length(); i++) {
-				JSONObject feedObj = feedArray.getJSONObject(i);
-				FeedItem item = FeedItem.fromJSON (feedObj);
+				FeedItem item = (FeedItem) dummy.fromJSON (feedArray.getJSONObject(i));
+                feedItems.add(item);
 
-				List<String> tags = item.getHashtag ();
-				for (String t: tags)
-					if (t != null) hashtagTrie.insertWord(t);
-
-				feedItems.add(item);
+                hashtagTrie.insertAllWords(item.getHashtag ());
 			}
 
 			listAdapter.notifyDataSetChanged();
