@@ -1,5 +1,8 @@
-**/build/
-**/.idea/
+app/build/**
+build/**
+*.bk
+*.swp
+.idea/
 DS_STORE
 local.properties
 
