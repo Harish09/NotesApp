@@ -1,135 +1,136 @@
 package harish.notesui.data;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FeedItem implements Serializable {
-	private String hashtag;
-	private int id;
-	private String name, status, image, profilePic, timeStamp, url;
+    private int id;
+    private String name, status, image, profilePic, timeStamp, url;
+    private List<String> hashtag;
 
-	public FeedItem() {
-	}
+    public FeedItem() {
+    }
 
+    public static FeedItem fromJSON(JSONObject feedObj) throws JSONException {
 
-	public static FeedItem fromJSON(JSONObject feedObj) throws JSONException {
+        FeedItem item = new FeedItem ();
 
-		FeedItem item = new FeedItem ();
+        item.setId(feedObj.getInt("id"));
+        item.setName(feedObj.getString("name"));
+        item.setImage(feedObj.optString("image"));
+        item.setStatus(feedObj.getString("status"));
+        item.setProfilePic(feedObj.optString("profilePic", "http://delfoo.com/image/profile_image/blank_user.png"));
+        item.setTimeStamp(feedObj.getString("timeStamp"));
+        item.setUrl(feedObj.optString("url"));
 
-		item.setId(feedObj.getInt("id"));
+        JSONArray js = feedObj.optJSONArray("hashtag");
+        List<String> l = new ArrayList<>();
 
-		item.setName(feedObj.getString("name"));
+        if (js != null)
+            for (int i = 0, len = js.length(); i < len; i++)
+                l.add(js.toString());
 
-		String image = feedObj.isNull("image") ? null : feedObj.getString("image");
-		item.setImage(image);
+        item.setHashtag(l);
 
-		item.setStatus(feedObj.getString("status"));
+        return item;
+    }
 
-		String profilePic = feedObj.isNull("profilePic") ? "http://delfoo.com/image/profile_image/blank_user.png" : feedObj.getString("profilePic");
-		item.setProfilePic(profilePic);
+    public JSONObject toJSON() throws JSONException {
+        return new JSONObject ()
+                .put ("id", this.getId ())
+                .put ("name", this.getName ())
+                .put ("image", this.getImage ())
+                .put ("status", this.getStatus ())
+                .put ("profilePic", this.getProfilePic ())
+                .put ("timeStamp", this.getTimeStamp ())
+                .put ("url", this.getUrl ())
+                .put ("hashtag", new JSONArray(this.getHashtag ()));
+    }
 
-		item.setTimeStamp(feedObj.getString("timeStamp"));
+    public List<String> getHashtag() {
+//        StringBuilder hashtags = new StringBuilder();
+//
+//        for (String tag: this.hashtag)
+//            hashtags.append("#").append(tag).append(" ");
 
-		String feedUrl = feedObj.isNull("url") ? null : feedObj.getString("url");
-		item.setUrl(feedUrl);
+        return hashtag;
+//        return hashtags.toString();
+    }
 
-		String tag = feedObj.isNull("hashtag") ? null : feedObj.getString("hashtag");
-		item.setHashtag(tag);
+    public void setHashtag(List<String> hashtag) {
+        this.hashtag = hashtag;
+    }
 
-		return item;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public JSONObject toJSON() throws JSONException {
-		return new JSONObject ()
-				.put ("id", this.getId ())
-				.put ("name", this.getName ())
-				.put ("image", this.getImage ())
-				.put ("status", this.getStatus ())
-				.put ("profilePic", this.getProfilePic ())
-				.put ("timeStamp", this.getTimeStamp ())
-				.put ("url", this.getUrl ())
-				.put ("hashtag", this.getHashtag ());
-	}
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-	public String getHashtag() {
-		return hashtag;
-	}
+    public FeedItem(int id, String name, String image, String status,
+                    String profilePic, String timeStamp, String url, List<String> hashtag) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.status = status;
+        this.profilePic = profilePic;
+        this.timeStamp = timeStamp;
+        this.hashtag = hashtag;
+        this.url = url;
+    }
 
-	public void setHashtag(String hashtag) {
-		this.hashtag = hashtag;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public FeedItem(int id, String name, String image, String status,
-	                String profilePic, String timeStamp, String url, String hashtag) {
-		this.id = id;
-		this.name = name;
-		this.image = image;
-		this.status = status;
-		this.profilePic = profilePic;
-		this.timeStamp = timeStamp;
-		this.hashtag = hashtag;
-		this.url = url;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getProfilePic() {
+        return profilePic;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public String getTimeStamp() {
+        return timeStamp;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 
-	public String getProfilePic() {
-		return profilePic;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setProfilePic(String profilePic) {
-		this.profilePic = profilePic;
-	}
-
-	public String getTimeStamp() {
-		return timeStamp;
-	}
-
-	public void setTimeStamp(String timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

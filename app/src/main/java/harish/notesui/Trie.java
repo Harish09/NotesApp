@@ -21,7 +21,7 @@ class Trie {
         return word.toLowerCase().replace(" ", "");
     }
 
-    public void insertWord(String word) {
+    void insertWord(String word) {
 
         String trieWord = normalizeWord (word);
 
@@ -51,7 +51,7 @@ class Trie {
         }
     }
 
-    public void printTrie() {
+    private void printTrie() {
         if (this.isLeaf) {
             System.out.println(this.safeNames.toString());
             return;
@@ -73,7 +73,7 @@ class Trie {
         tmp.printTrie();
     }
 
-    void checkDeepPaths(List<Trie> possiblePaths, char toBeFound) {
+    private void checkDeepPaths(List<Trie> possiblePaths, char toBeFound) {
         if (this.isLeaf)
             return;
 

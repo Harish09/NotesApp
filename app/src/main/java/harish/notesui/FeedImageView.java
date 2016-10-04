@@ -115,12 +115,7 @@ public class FeedImageView extends ImageView {
 					public void onResponse(final ImageContainer response,
 							boolean isImmediate) {
 						if (isImmediate && isInLayoutPass) {
-							post(new Runnable() {
-								@Override
-								public void run() {
-									onResponse(response, false);
-								}
-							});
+							post(() -> onResponse(response, false));
 							return;
 						}
 

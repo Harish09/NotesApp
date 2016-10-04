@@ -1,13 +1,24 @@
 apply plugin: 'com.android.application'
 
+def MAX_SDK = 24
+def MIN_SDK = 19
+
 android {
-    compileSdkVersion 24
+    compileSdkVersion MAX_SDK
     buildToolsVersion "24.0.3"
 
     defaultConfig {
         applicationId "harish.notesui"
-        minSdkVersion 19
-        targetSdkVersion 24
+        minSdkVersion MIN_SDK
+        targetSdkVersion MAX_SDK
+        jackOptions {
+            enabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -21,5 +32,4 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.volley:volley:1.0.0'
-
 }
