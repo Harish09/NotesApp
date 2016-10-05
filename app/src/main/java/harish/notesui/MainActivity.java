@@ -2,7 +2,6 @@ package harish.notesui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -17,8 +16,6 @@ import android.widget.ListView;
 import com.android.volley.Cache;
 import com.android.volley.Cache.Entry;
 import com.android.volley.Request.Method;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 
@@ -53,58 +50,37 @@ public class MainActivity extends Activity {
 
 		feedItems = new ArrayList<>();
 		hashtagTrie = new Trie('\0', false);
+
 		listAdapter = new FeedListAdapter(this, feedItems);
 		listView.setAdapter(listAdapter);
 
-		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b5998")));
-		getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
-
-		Cache cache = AppController.getInstance().getRequestQueue().getCache();
-		Entry entry = cache.get(URL_FEED);
-		if (entry != null) {
-			try {
-				String data = new String(entry.data, "UTF-8");
-				parseJsonFeed(new JSONObject(data));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET, URL_FEED, null, new Response.Listener<JSONObject>() {
-				@Override
-				public void onResponse(JSONObject response) {
-					VolleyLog.d(TAG, "Response: " + response.toString());
-					parseJsonFeed(response);
-				}
-			}, new Response.ErrorListener() {
-
-				@Override
-				public void onErrorResponse(VolleyError error) {
-					VolleyLog.d(TAG, "Error: " + error.getMessage());
-				}
-			});
-
-			AppController.getInstance().addToRequestQueue(jsonReq);
+		if (getActionBar() != null) {
+			getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b5998")));
+			getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
 		}
+
+		showFeed(URL_FEED);
 
 		sV.addTextChangedListener(new TextWatcher() {
 			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-			}
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				String query = s.toString();
 
-				if (query.isEmpty()) return;
+				if (query.isEmpty()) {
+					showFeed(URL_FEED);
+					return;
+				}
 
 				List<String> suggestions = hashtagTrie.searchSubsequence(query);
-
 				List<FeedItem> list = new ArrayList<>();
 
 				for (FeedItem feedItem : feedItems)
-					if (suggestions.contains(feedItem.getHashtag()))
-						list.add(feedItem);
+					for (String tag: feedItem.getHashtag())
+						if (suggestions.contains(tag))
+							list.add(feedItem);
 
 				feedItems.clear();
 				feedItems.addAll(list);
@@ -113,24 +89,43 @@ public class MainActivity extends Activity {
 			}
 
 			@Override
-			public void afterTextChanged(Editable s) {
-
-			}
+			public void afterTextChanged(Editable s) {}
 		});
 	}
 
+	private void showFeed(String URL_FEED) {
+		Cache cache = AppController.getInstance().getRequestQueue().getCache();
+		Entry entry = cache.get(URL_FEED);
+		if (entry != null)
+			try {
+				parseJsonFeed(new JSONObject(new String(entry.data, "UTF-8")));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		else
+			AppController.getInstance().addToRequestQueue(getFeed(URL_FEED));
+	}
+
+	@NonNull
+	private JsonObjectRequest getFeed(String URL_FEED) {
+		return new JsonObjectRequest(Method.GET,
+				URL_FEED,
+				null,
+                this::parseJsonFeed,
+				error -> VolleyLog.d(TAG, "Error: " + error.getMessage())
+		);
+	}
+
 	private void parseJsonFeed(@NonNull JSONObject response) {
+		FeedItem dummy = new FeedItem();
 		try {
 			JSONArray feedArray = response.getJSONArray("feed");
 
 			for (int i = 0; i < feedArray.length(); i++) {
-				JSONObject feedObj = (JSONObject) feedArray.get(i);
-				FeedItem item = FeedItem.fromJSON (feedObj);
+				FeedItem item = (FeedItem) dummy.fromJSON (feedArray.getJSONObject(i));
+                feedItems.add(item);
 
-				String tag = item.getHashtag ();
-				if (tag != null) hashtagTrie.insertWord(tag);
-
-				feedItems.add(item);
+                hashtagTrie.insertAllWords(item.getHashtag ());
 			}
 
 			listAdapter.notifyDataSetChanged();
@@ -146,18 +141,16 @@ public class MainActivity extends Activity {
 	}
 
 	public void upload(View view) {
-		Intent uploadIntent = new Intent(MainActivity.this, UploadHandler.class);
+		ArrayList<String> list = new ArrayList<>();
 
-		ArrayList<String> list = new ArrayList<> ();
-
-		for (FeedItem f : feedItems) {
+		for (FeedItem feedItem : feedItems)
 			try {
-				list.add (f.toJSON ().toString ());
+				list.add (feedItem.toJSON ().toString ());
 			} catch (JSONException e) {
 				e.printStackTrace ();
 			}
-		}
 
+		Intent uploadIntent = new Intent(MainActivity.this, UploadHandler.class);
 		uploadIntent.putStringArrayListExtra ("feed", list);
 
 		startActivity(uploadIntent);

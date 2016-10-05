@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 
 class Trie {
-    public char nodeChar;
-    public boolean isLeaf;
-    public List<String> safeNames;
-    public HashMap<Character, Trie> subtrie;
+    private char nodeChar;
+    private boolean isLeaf;
+    private List<String> safeNames;
+    private HashMap<Character, Trie> subtrie;
 
     Trie(char nodeChar, boolean isLeaf) {
         subtrie = new HashMap<>();
@@ -17,11 +17,13 @@ class Trie {
         this.isLeaf = isLeaf;
     }
 
-    String normalizeWord(String word) {
+    private String normalizeWord(String word) {
         return word.toLowerCase().replace(" ", "");
     }
 
-    public void insertWord(String word) {
+    private void insertWord(String word) {
+
+        if (word == null) return;
 
         String trieWord = normalizeWord (word);
 
@@ -45,13 +47,12 @@ class Trie {
         }
     }
 
-    public void insertAllWords(List<String> words) {
-        for (int i = 0; i < words.size (); i++) {
-            insertWord (words.get (i));
-        }
+    void insertAllWords(List<String> words) {
+        for (String word: words)
+            insertWord (word);
     }
 
-    public void printTrie() {
+    private void printTrie() {
         if (this.isLeaf) {
             System.out.println(this.safeNames.toString());
             return;
@@ -73,7 +74,7 @@ class Trie {
         tmp.printTrie();
     }
 
-    void checkDeepPaths(List<Trie> possiblePaths, char toBeFound) {
+    private void checkDeepPaths(List<Trie> possiblePaths, char toBeFound) {
         if (this.isLeaf)
             return;
 
@@ -84,7 +85,7 @@ class Trie {
                 possiblePaths.add(subtrie);
     }
 
-    public List<String> searchSubsequence(String sequence) {
+    List<String> searchSubsequence(String sequence) {
 
         ArrayList<Trie> possiblePaths = new ArrayList<>(),
                 searchablePaths = new ArrayList<>();

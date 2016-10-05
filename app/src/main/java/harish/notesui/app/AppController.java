@@ -31,9 +31,8 @@ public class AppController extends Application {
 	}
 
 	public RequestQueue getRequestQueue() {
-		if (mRequestQueue == null) {
+		if (mRequestQueue == null)
 			mRequestQueue = Volley.newRequestQueue(getApplicationContext());
-		}
 
 		return mRequestQueue;
 	}
@@ -65,8 +64,7 @@ public class AppController extends Application {
 	}
 
 	public void cancelPendingRequests(Object tag) {
-		if (mRequestQueue != null) {
+		if (mRequestQueue != null)
 			mRequestQueue.cancelAll(tag);
-		}
 	}
 }

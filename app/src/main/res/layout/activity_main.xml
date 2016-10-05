@@ -3,30 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView"
-        android:layout_gravity="center_horizontal"
-        android:inputType="text"
-        android:hint="Search"
-        />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchView"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text"
+            android:hint="Search"
+            />
 
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null" />
 
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@null" />
-
-</LinearLayout>
-
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/uploadbutton"
@@ -34,7 +31,8 @@
         android:layout_height="93dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:background="@drawable/uploadbutton"
         android:onClick="upload"/>
 
-        </RelativeLayout>
+</RelativeLayout>

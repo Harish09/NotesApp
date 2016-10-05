@@ -2,31 +2,18 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:id="@+id/activity_upload"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-
-        android:id="@+id/name"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="65dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:hint="Status"
         android:textAppearance="?android:attr/textAppearanceLarge"
-
         android:id="@+id/status"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="65dp"
-        android:layout_below="@+id/name"
+        android:layout_marginTop="29dp"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -36,29 +23,55 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/drivelink"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="83dp"
-        android:layout_below="@id/status"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/status"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
+        android:text=""
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hashtag"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/hashtag"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="53dp"
-        android:layout_below="@id/drivelink"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/hashtags"
+        android:layout_below="@+id/drivelink"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        />
 
-    <ImageButton
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hashtags"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:hint="Hashtag"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/hashtag"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content" />
+
+        <Button
+            android:text="+"
+            android:layout_weight="1"
+            android:onClick="addHashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:id="@+id/button" />
+
+    </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:src="@drawable/u2"
+        android:text="Upload"
         android:onClick="submit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-
 
 </RelativeLayout>

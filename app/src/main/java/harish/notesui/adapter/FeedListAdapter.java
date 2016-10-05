@@ -23,112 +23,102 @@ import harish.notesui.FeedImageView;
 import harish.notesui.R;
 
 public class FeedListAdapter extends BaseAdapter {
-	private Activity activity;
-	private LayoutInflater inflater;
-	private List<FeedItem> feedItems;
-	ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    private LayoutInflater inflater;
+    private List<FeedItem> feedItems;
+    private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-	public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
-		this.activity = activity;
-		this.feedItems = feedItems;
-	}
+    public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
+        this.feedItems = feedItems;
+        this.inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
 
-	@Override
-	public int getCount() {
-		return feedItems.size();
-	}
+    @Override
+    public int getCount() {
+        return feedItems.size();
+    }
 
-	@Override
-	public Object getItem(int location) {
-		return feedItems.get(location);
-	}
+    @Override
+    public FeedItem getItem(int location) {
+        return feedItems.get(location);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null)
+            convertView = inflater.inflate(R.layout.feed_item, null);
 
-		if (inflater == null)
-			inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (imageLoader == null)
+            imageLoader = AppController.getInstance().getImageLoader();
 
-		if (convertView == null)
-			convertView = inflater.inflate(R.layout.feed_item, null);
+        TextView name = (TextView) convertView.findViewById(R.id.name);
+        TextView timestamp = (TextView) convertView.findViewById(R.id.timestamp);
+        TextView hashtag = (TextView) convertView.findViewById(R.id.txtHashtag);
+        TextView statusMsg = (TextView) convertView.findViewById(R.id.txtStatusMsg);
+        TextView url = (TextView) convertView.findViewById(R.id.txtUrl);
 
-		if (imageLoader == null)
-			imageLoader = AppController.getInstance().getImageLoader();
+        NetworkImageView profilePic = (NetworkImageView) convertView.findViewById(R.id.profilePic);
+        FeedImageView feedImageView = (FeedImageView) convertView.findViewById(R.id.feedImage1);
 
-		TextView name = (TextView) convertView.findViewById(R.id.name);
+        FeedItem item = getItem(position);
 
-		TextView timestamp = (TextView) convertView.findViewById(R.id.timestamp);
+        name.setText(item.getName());
 
-		TextView hashtag = (TextView) convertView.findViewById(R.id.txtHashtag);
+        CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
+                Long.parseLong(item.getTimeStamp()),
+                System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
+        timestamp.setText(timeAgo);
 
-		TextView statusMsg = (TextView) convertView.findViewById(R.id.txtStatusMsg);
+        if (!TextUtils.isEmpty(item.getStatus())) {
+            statusMsg.setText(item.getStatus());
+            statusMsg.setVisibility(View.VISIBLE);
+        } else {
+            statusMsg.setVisibility(View.GONE);
+        }
 
-		TextView url = (TextView) convertView.findViewById(R.id.txtUrl);
+        if (item.getUrl() != null) {
+            url.setText(Html.fromHtml(String.format("<a href=\"%s\">%s</a> ", item.getUrl(), item.getUrl())));
 
-		NetworkImageView profilePic = (NetworkImageView) convertView.findViewById(R.id.profilePic);
+            url.setMovementMethod(LinkMovementMethod.getInstance());
+            url.setVisibility(View.VISIBLE);
+        } else {
+            url.setVisibility(View.GONE);
+        }
 
-		FeedImageView feedImageView = (FeedImageView) convertView.findViewById(R.id.feedImage1);
+        if (item.getHashtag() != null) {
+            StringBuilder hashtags = new StringBuilder();
 
-		FeedItem item = feedItems.get(position);
+            for (String tag: item.getHashtag())
+                hashtags.append("#").append(tag).append(" ");
 
-		name.setText(item.getName());
+            hashtag.setText(Html.fromHtml(String.format("<b>%s</b>", hashtags.toString() )));
+            hashtag.setVisibility(View.VISIBLE);
+        } else
+            hashtag.setVisibility(View.GONE);
 
-		// Converting timestamp into x ago format
-		CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
-				Long.parseLong(item.getTimeStamp()),
-				System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
-		timestamp.setText(timeAgo);
+        profilePic.setImageUrl(item.getProfilePic(), imageLoader);
 
-		// Chcek for empty status message
-		if (!TextUtils.isEmpty(item.getStatus())) {
-			statusMsg.setText(item.getStatus());
-			statusMsg.setVisibility(View.VISIBLE);
-		} else {
-			// status is empty, remove from view
-			statusMsg.setVisibility(View.GONE);
-		}
+        if (item.getImage() != null) {
+            feedImageView.setImageUrl(item.getImage(), imageLoader);
+            feedImageView.setVisibility(View.VISIBLE);
+            feedImageView.setResponseObserver(new FeedImageView.ResponseObserver() {
+                @Override
+                public void onError() {
+                }
 
-		// Checking for null feed url
-		if (item.getUrl() != null) {
-			url.setText(Html.fromHtml("<a href=\"" + item.getUrl() + "\">"
-					+ item.getUrl() + "</a> "));
+                @Override
+                public void onSuccess() {
+                }
+            });
+        } else {
+            feedImageView.setVisibility(View.GONE);
+        }
 
-			url.setMovementMethod(LinkMovementMethod.getInstance());
-			url.setVisibility(View.VISIBLE);
-		} else {
-			url.setVisibility(View.GONE);
-		}
-
-		if (item.getHashtag() != null) {
-			hashtag.setText(Html.fromHtml(String.format("<b>#%s</b>", item.getHashtag())));
-			hashtag.setVisibility(View.VISIBLE);
-		} else
-			hashtag.setVisibility(View.GONE);
-
-		profilePic.setImageUrl(item.getProfilePic(), imageLoader);
-
-		if (item.getImage() != null) {
-			feedImageView.setImageUrl(item.getImage(), imageLoader);
-			feedImageView.setVisibility(View.VISIBLE);
-			feedImageView.setResponseObserver(new FeedImageView.ResponseObserver() {
-				@Override
-				public void onError() {
-				}
-
-				@Override
-				public void onSuccess() {
-				}
-			});
-		} else {
-			feedImageView.setVisibility(View.GONE);
-		}
-
-		return convertView;
-	}
+        return convertView;
+    }
 
 }
